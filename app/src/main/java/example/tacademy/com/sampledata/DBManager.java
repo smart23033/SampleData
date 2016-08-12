@@ -49,7 +49,6 @@ public class DBManager extends SQLiteOpenHelper{
 
     public Person insert(Person p){
         if(p.id == -1){
-            Log.i("DBManager","insert()");
             SQLiteDatabase db = getWritableDatabase();
             ContentValues values = new ContentValues();
             values.put(AddressContract.Address.COLUMN_NAME, p.name);
@@ -59,7 +58,6 @@ public class DBManager extends SQLiteOpenHelper{
 
             long id = db.insert(AddressContract.Address.TABLE, null, values);
             p.id = id;
-            Log.i("DBManager","p.id : " + p.id);
         }else{
             update(p);
         }
@@ -68,7 +66,6 @@ public class DBManager extends SQLiteOpenHelper{
 
     public Person update(Person p){
         if(p.id != -1){
-            Log.i("DBManager","update()");
             SQLiteDatabase db = getWritableDatabase();
             ContentValues values = new ContentValues();
             values.put(AddressContract.Address.COLUMN_NAME, p.name);
@@ -80,7 +77,6 @@ public class DBManager extends SQLiteOpenHelper{
             db.update(AddressContract.Address.TABLE,values,where,args);
             return p;
         }else{
-            Log.i("DBManager","update() - insert()");
             return insert(p);
         }
     }

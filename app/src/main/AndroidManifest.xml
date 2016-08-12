@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:name=".MyApplication"
@@ -21,8 +22,13 @@
         </activity>
         <activity android:name=".ExternalActivity" />
         <activity android:name=".SharedActivity" />
-        <activity android:name=".AddressActivity" android:exported="true"/>
-        <activity android:name=".AddressAddActivity"></activity>
+        <activity
+            android:name=".AddressActivity"
+            android:exported="true" />
+        <activity android:name=".AddressAddActivity" />
+        <activity android:name=".ContactsActivity" />
+        <activity android:name=".LoaderActivity" />
+        <activity android:name=".ImageViewActivity" android:exported="true"></activity>
     </application>
 
 </manifest>
